@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velvante</title>
+    <!-- Add Bootstrap CDN links -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/40eeaef62f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        .navbar-background {
+            position: absolute;
+            width: 100%;
+        }
+
+        .nav-item a {
+            color: #fff !important;
+        }
+
+        .about-fourth-section {
+            padding-top: 6rem;
+        }
+
+        .logo-conc-img {
+            text-align: center;
+        }
+
+        .logo-conc-img img {
+            width: 80%;
+        }
+
+        .conc-head {
+            background-color: #c638382d;
+            padding: 80px 60px 100px 50px;
+            clip-path: polygon(100% 70%, 100% 0%, 0% 0%, 0% 100%);
+            float: left;
+
+        }
+
+        .conc-head h4 {
+            font-size: 3rem;
+        }
+
+        .conc-head h1 {
+            font-size: 5rem;
+        }
+
+        .logo-desc h4 {
+            font-size: 3rem;
+            font-weight: 200;
+            padding-top: 2rem;
+            color: #c63938;
+            text-align: end;
+        }
+
+
+
+        video {
+            height: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .video-container {
+            position: relative;
+        }
+
+        .text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            text-align: center;
+            font-size: 24px;
+            width: 80%;
+            z-index: 1;
+        }
+
+        .text-overlay img {
+            max-width: 90%;
+            height: auto;
+        }
+
+        .white-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.2);
+            /* Adjust opacity by changing the last value (0 to 1) */
+            z-index: 0;
+        }
+
+        .partner-head {
+            padding-top: 6rem;
+            text-align: center;
+            padding-bottom: 2rem;
+        }
+
+        .partners-logos img {
+            width: 100%;
+            object-fit: contain;
+            height: 130px;
+        }
+
+        .partners-logos {
+            background-color: #d1cbcb2d;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .about-first-section {
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+
+        .col-md-6 img {
+            background-position: center;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-wireframe img {
+            width: 100%;
+        }
+
+        .logo-conc-img {
+            position: relative;
+        }
+
+        .logo-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .logo-wireframe p {
+            color: #000;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+        }
+
+        .logo-overlay:hover {
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        .logo-overlay:hover+#a-tag {
+            display: block;
+        }
+
+        #a-tag:hover {
+            display: block;
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        .logo-wireframe {
+            position: relative;
+        }
+
+        .testimonial-cont {
+            display: flex;
+            gap: 5px;
+        }
+
+        .testimonial-cont h2 {
+            font-size: 15rem;
+            line-height: 1;
+            font-family: "BIZ UDPGothic", sans-serif;
+            color: #c63938;
+        }
+
+        .testimonial-section {
+            padding-top: 6rem;
+        }
+
+        .testimonial-cont p {
+            width: 80%;
+            line-height: 1.7rem;
+            text-align: left;
+        }
+
+        .img-icn img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .cus-name h2 {
+            font-size: 4rem;
+            padding-top: 1rem;
+        }
+        #testimonialCarousel {
+            position: relative;
+        }
+
+        .carousel-control-prev, .carousel-control-next {
+            width: 6%; /* Adjust the width as needed */
+            position: absolute;
+            top: 100%;
+            left: 50% !important;
+            font-size: 24px; /* Adjust the font size as needed */
+            color: #000; /* Arrow color */
+            transform: translate(-50%, -50%);
+        }
+
+        .carousel-control-prev {
+            left: 0;
+            text-align: left;
+            padding-right:4rem ;
+            
+        }
+
+        .carousel-control-next {
+            right: 0;
+            text-align: right;
+            padding-left: 4rem;
+        }
+        .carousel-inner{
+            padding-bottom: 2rem;
+        }
+        /* Add your custom styles here if needed */
+        .testimonial-cont {
+            text-align: center;
+            padding: 20px;
+        }
+        .partners-section{
+            padding-bottom: 3rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="static-button" onclick="scrollToNavbar()"><i class="fa-solid fa-angle-up"></i></div>
+
+    <!-- Wrapper for navbar content -->
+    <div id="navbar" class="">
+        <!-- Navbar background -->
+        <div class="navbar-background">
+            <!-- Navbar using Bootstrap -->
+            <nav class="navbar navbar-expand-lg">
+
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="about-second-section">
+        <div class="video-container">
+            <video autoplay muted loop>
+                <source src="production_id_3770054 (1080p).mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="white-overlay"></div>
+            <div class="text-overlay">
+                <div class="logo-center">
+                    <img src="velvante.svg" alt="">
+                    <div class="logo-desc">
+                        <h4>Crafting Elegance</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="about-first-section">
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-md-6 content-sec">
+                    <div class="cont-txt">
+                        <h1>About Us</h1>
+                        <p>Velvante offers a comprehensive interior design and turnkey renovation solution. Our
+                            commitment spans every stage of your project, from the initial design concept to the final
+                            completion, ensuring the creation of harmonious and functional interiors that resonate with
+                            your unique vision.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="wrapper">
+                        <a href="/87160.jpg">
+                            <div class="logo-wireframe">
+
+                                <img src="logo_wireframe.svg" alt="">
+                                <div class="logo-overlay">
+
+                                </div>
+                                <p id='a-tag'>Learn more about logo</p>
+                            </div>
+                        </a>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="partners-section">
+        <div class="partner-head">
+            <h2>Our Partners</h2>
+        </div>
+        <div class="row partners-logos">
+            <div class="col">
+                <img src="hettich.png" alt="">
+            </div>
+            <div class="col">
+                <img src="hettich.png" alt="">
+            </div>
+            <div class="col">
+                <img src="hettich.png" alt="">
+            </div>
+            <div class="col">
+                <img src="hettich.png" alt="">
+            </div>
+            <div class="col">
+                <img src="hettich.png" alt="">
+            </div>
+            <div class="col">
+                <img src="hettich.png" alt="">
+            </div>
+        </div>
+
+    </div>
+    <div class="testimonial-section carousel slide" id="testimonialCarousel" data-ride="carousel">
+        <div class="wrapper">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="img-icn">
+                                <img src="87160.jpg" alt="">
+                            </div>
+                            <div class="cus-name">
+                                <h2>John Doe</h2>
+                                <p>CEO of Google</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="testimonial-cont">
+                                <h2>"</h2>
+                                <div>
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum facere libero
+                                        ipsam quaerat voluptates modi ut iste animi, labore, facilis, tempore
+                                        asperiores. Mollitia quasi officia odio laudantium, aliquam dignissimos sed.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item ">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="img-icn">
+                                <img src="87160.jpg" alt="">
+                            </div>
+                            <div class="cus-name">
+                                <h2>John Doe</h2>
+                                <p>CEO of Google</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="testimonial-cont">
+                                <h2>"</h2>
+                                <div>
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum facere libero
+                                        ipsam quaerat voluptates modi ut iste animi, labore, facilis, tempore
+                                        asperiores. Mollitia quasi officia odio laudantium, aliquam dignissimos sed.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item ">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="img-icn">
+                                <img src="87160.jpg" alt="">
+                            </div>
+                            <div class="cus-name">
+                                <h2>John Doe</h2>
+                                <p>CEO of Google</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="testimonial-cont">
+                                <h2>"</h2>
+                                <div>
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum facere libero
+                                        ipsam quaerat voluptates modi ut iste animi, labore, facilis, tempore
+                                        asperiores. Mollitia quasi officia odio laudantium, aliquam dignissimos sed.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item ">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="img-icn">
+                                <img src="87160.jpg" alt="">
+                            </div>
+                            <div class="cus-name">
+                                <h2>John Doe</h2>
+                                <p>CEO of Google</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="testimonial-cont">
+                                <h2>"</h2>
+                                <div>
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum facere libero
+                                        ipsam quaerat voluptates modi ut iste animi, labore, facilis, tempore
+                                        asperiores. Mollitia quasi officia odio laudantium, aliquam dignissimos sed.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#testimonialCarousel" role="button" data-slide="prev">
+               <img src="keyboard_arrow_left_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+            </a>
+            <a class="carousel-control-next" href="#testimonialCarousel" role="button" data-slide="next">
+                <img src="keyboard_arrow_right_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+            </a>
+        </div>
+    </div>
+    <div class="about-fourth-section">
+        <div class="conc-head">
+            <div>
+                <h4>3 Pillars of </h4>
+                <h1>Velvante</h1>
+            </div>
+
+        </div>
+        <div class="wrapper">
+            <div class="logo-conc-img">
+                <img src="whatisvelvante.svg" alt="">
+                <div></div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="seventh-section">
+        <div class="back-img-sec">
+
+
+            <div class="wrapper">
+                <div class="contact-us">
+                    <div class="cont-head">
+                        <h1>Contact Us</h1>
+                        <p class="caution">Your email address will not be published. Required fields are marked *</p>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+
+                            <form>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="name">Your Name:</label>
+                                        <input type="text" class="form-control" id="name" name="name" required>
+
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="email">Your Email:</label>
+                                        <input type="email" id="email" class="form-control" name="email" required>
+
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="phone">Your Phone Number:</label>
+                                        <input type="tel" class="form-control" id="phone" name="phone">
+
+
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="budget">Project Budget:</label>
+                                        <input type="text" class="form-control" id="budget" name="budget">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputAddress">Address</label>
+                                    <input type="text" class="form-control" id="inputAddress" placeholder="">
+                                </div>
+
+                                <button type="submit" class="secondary-btn">Submit</button>
+                            </form>
+                        </div>
+                        <div class="col-md-6 address-sec">
+                            <!-- <div class="contact-ic">
+                                <img src="icons8-call-50.png" alt="">
+                                <p>Call us: (229) 555-0109</p>
+                            </div>
+                            <div class="contact-ic">
+                                <img src="icons8-email-50.png" alt="">
+                                <p>Email Us: contact@example.com</p>
+
+                            </div>
+                            <div class="contact-ic">
+                                <img src="office-building (1).png">
+                                <p>Find us: 2972 Westheimer Rd. Santa Ana, Illinois 85486</p>
+
+                            </div> -->
+                            <div class="row contact-row">
+                                <div class="col contact-details">
+                                    <h4>Direct contact</h4>
+                                    <p>2972 WESTHEIMER RD. SANTA ANA, ILLINOIS 85486</p>
+                                    <p>(229) 555-0109</p>
+                                    <p>CONTACT@EXAMPLE.COM</p>
+                                    <button id="saveContact" class="secondary-btn">Save Contact</button>
+
+                                </div>
+                                <div class="col contact-details">
+                                    <h4>ADMINISTRATIVE HOURS</h4>
+                                    <p>Monday to Friday, 9AM–5PM</p>
+
+                                    <p>Weekend Closed</p>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <footer class="bg-white p-5">
+        <div class="">
+            <div class="row">
+                <!-- Logo on the left -->
+                <div class="col-12 col-md-6">
+                    <img src="velvante.svg" alt="Logo" height="25">
+                </div>
+
+                <!-- Columns on the right -->
+                <div class="col-12 col-md-6">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6">
+                            <h5>Social</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="#">Instagram</a></li>
+                                <li><a href="#">LinkedIn</a></li>
+                                <li><a href="#">Behance</a></li>
+                                <!-- Add more links as needed -->
+                            </ul>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <h5>Info</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="#">Contact</a></li>
+                                <li><a href="#">Services</a></li>
+                                <!-- Add more links as needed -->
+                            </ul>
+                        </div>
+                        <div class="col-md-4 col-sm-12">
+                            <h5>Contact</h5>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <p>2972 WESTHEIMER RD. SANTA ANA, ILLINOIS 85486</p>
+
+
+                                <li>
+                                    <p>(229) 555-0109</p>
+                                </li>
+                                <li>
+                                    <p>CONTACT@EXAMPLE.COM</p>
+                                </li>
+                                <!-- Add more links as needed -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <script src="index.js"></script>
+
+</body>
+
+</html>

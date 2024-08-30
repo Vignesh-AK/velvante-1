@@ -1,0 +1,135 @@
+<script>
+  $(document).ready(function () {
+      var scrollImage = $("#scrollImage");
+      var scrollTrigger = 200; // Set the scroll trigger value
+
+      $(window).scroll(function () {
+          var scroll = $(this).scrollTop();
+
+          // Calculate the new height based on the scroll position
+          var newHeight = 70 - (scroll / scrollTrigger) * 60;
+          newHeight = Math.max(newHeight, 60); // Ensure the height doesn't go below 50
+
+          // Apply the new height with a smooth transition
+          scrollImage.css('height', newHeight + 'vh');
+      });
+  });
+
+
+</script>
+
+
+<script>
+ // Function to handle scroll events
+function handleScroll() {
+// Get the scroll position
+const scrollPosition = window.scrollY;
+
+// Get the section where you want to trigger the rotation
+const scrollTriggerSection = document.getElementById('third-section');
+
+// You can adjust these values based on when you want the rotation to start and the range of rotation
+const scrollTriggerStart = 900;
+const scrollTriggerEnd = 1700;
+const maxRotation = 3;
+const maxPadding = 20; // Adjust this value as needed
+
+// Calculate the rotation angle based on the scroll position
+let rotationAngle = 0;
+let paddingValue = 0;
+
+if (scrollPosition > scrollTriggerStart && scrollPosition < scrollTriggerEnd) {
+const progress = (scrollPosition - scrollTriggerStart) / (scrollTriggerEnd - scrollTriggerStart);
+rotationAngle = maxRotation * progress;
+paddingValue = maxPadding * progress;
+} else if (scrollPosition >= scrollTriggerEnd) {
+rotationAngle = maxRotation;
+paddingValue = maxPadding;
+}
+
+// Apply the rotation
+document.querySelector('#scrollImage2').style.transform = `rotate(${rotationAngle}deg)`;
+
+// Apply the padding
+document.querySelector('#scrollImage2').style.paddingLeft = `${paddingValue}px`;
+}
+
+// Attach the scroll event listener
+window.addEventListener('scroll', handleScroll);
+</script>
+<script>
+  // Function to handle scroll events
+  function handleScroll() {
+      // Get the scroll position
+      const scrollPosition = window.scrollY;
+
+      // Get the section where you want to trigger the rotation
+      const scrollTriggerSection = document.getElementById('fourth-section');
+
+      // You can adjust these values based on when you want the rotation to start and the range of rotation
+      const scrollTriggerStart = 1500;
+      const scrollTriggerEnd = 2200;
+      const maxRotation = 13;
+
+      // Calculate the rotation angle based on the scroll position
+      let rotationAngle = 0;
+      console.log(scrollPosition, scrollTriggerStart)
+      if (scrollPosition > scrollTriggerStart && scrollPosition < scrollTriggerEnd) {
+          const progress = (scrollPosition - scrollTriggerStart) / (scrollTriggerEnd - scrollTriggerStart);
+          rotationAngle = maxRotation * progress;
+      } else if (scrollPosition >= scrollTriggerEnd) {
+          rotationAngle = maxRotation;
+      }
+
+      // Apply the rotation
+      document.querySelector('#scrollImage4').style.transform = `rotate(${rotationAngle}deg)`;
+      document.querySelector('#scrollImage4').style.p = `rotate(${rotationAngle}deg)`;
+  }
+
+  // Attach the scroll event listener
+  window.addEventListener('scroll', handleScroll);
+</script>
+  <script>
+// JavaScript function to scroll to the navbar
+function scrollToNavbar() {
+const navbar = document.getElementById('navbar');
+navbar.scrollIntoView({ behavior: 'smooth' });
+}
+</script>
+<script>
+ // Get the adjustable element
+const adjustableElement = document.getElementById('sofa-img-1');
+
+// Get the adjustable element
+
+// Define the scroll range where the adjustment occurs
+const startScroll = 700; // Adjust this value as needed
+const endScroll = 1300;   // Adjust this value as needed
+
+// Add a scroll event listener
+window.addEventListener('scroll', adjustBottomPosition);
+
+// Function to adjust the bottom position on scroll with easing
+function adjustBottomPosition() {
+// Get the current scroll position
+const scrollPosition = window.scrollY;
+
+// Check if the scroll position is within the specified range
+if (scrollPosition >= startScroll && scrollPosition <= endScroll) {
+// Calculate the adjusted bottom position based on the scroll position with easing
+const adjustedBottom = easeOutQuad(
+Math.min(1, (scrollPosition - startScroll) / (endScroll - startScroll))
+) * 70;
+
+// Set the adjusted bottom position
+adjustableElement.style.bottom = `${adjustedBottom}px`;
+}
+}
+
+// Easing function (Quadratic Ease Out)
+function easeOutQuad(t) {
+return t * (2 - t);
+}
+
+</script>
+ChatGPT
